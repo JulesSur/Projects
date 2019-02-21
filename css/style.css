@@ -1,0 +1,665 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+*, *:after, *:before { 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box; 
+          box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: White;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:900i');
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+body{
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    
+    overflow-x: hidden;
+    max-width: 100vw;
+    display: flex;
+    display: -webkit-flex;
+    
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#loading{
+    position: fixed;
+    background-color:white;
+    height: 100vh; 
+    width: 100vw; 
+    overflow: hidden; 
+    margin-top: 20em;
+    top: 0; 
+    left: 0;
+    z-index: 9999999999999;
+}
+
+#loading p{
+    margin: auto;
+    text-align: center;
+    width: 100vw;
+}
+
+.loader {
+  border: 7px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 7px solid #282537;
+  width: 75px;
+  height: 75px;
+ 
+  margin: 4em auto 2em auto;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+header {
+    height: 10em;
+    min-height: 20em;
+    width: 100vw;
+
+    background: #282537;
+    background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+    background-image: -moz-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+    background-image: -o-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+    background-image: radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+
+    display: flex;
+    display: -webkit-flex;
+}
+
+h1 {
+    color: white;
+    align-self: center;
+
+    font-weight: 100;
+    font-family: Mr Dafoe, sans-serif;
+    font-size: 10em;
+    text-align: center;
+    text-shadow: 0 -3px 0 #333,
+    0 6px 8px rgba(0, 0, 0, .4),
+    0 9px 10px rgba(0, 0, 0, .15),
+    0 30px 10px rgba(0, 0, 0, .18),
+    0 15px 10px rgba(0, 0, 0, .21);
+}
+
+h2 {
+    color: White;
+    width: 100%;
+    font-size: 4em;
+    font-family: sans-serif;
+    align-self: center;
+    text-align:center;
+}
+
+#container {
+    margin: auto;
+    height: auto;
+    width: 80vw;
+    display: -webkit-flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#aanmelden {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+}
+
+#aanmelden form{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em;
+    width: 40vw;
+    max-width: 20em;
+}
+
+#aanmelden form input{
+    color: #3b347b;
+    font-size: 1em;
+    border-bottom: 2px solid #3b347b;
+    height: 3em;
+    transition: 0.3s;
+    width: 100%;
+}
+
+#aanmelden form input::-webkit-input-placeholder {
+    color: #3b347b;
+}
+
+#aanmelden form input[placeholder]:focus {
+    color: #a49cec;
+    font-weight: 100;
+    font-size: 1.5em;
+    color: #a49cec;
+    outline-width: 0;
+    border-bottom: 3px solid #a49cec;
+}
+
+#aanmelden button{
+    margin: 1em 1em 0 0;
+    padding: 0.7em;
+    background-color: #3b347b;
+    font-size: 0.9em;
+    font-weight: 300;
+    transition: 0.3s;
+    color: white;
+}
+
+#aanmelden a{
+    margin: 1em 1em 0 0;
+    padding: 0.7em;
+    background-color: #3b347b;
+    font-size: 0.9em;
+    font-weight: 300;
+    transition: 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+
+#aanmelden button:hover{
+    cursor: pointer;
+    background-color: #a49cec;
+}
+
+#aanmelden a:hover{
+    cursor: pointer;
+    background-color: #a49cec;
+}
+
+#aanmelden button:active{
+    outline-width: 0;
+    background-color: red;
+}
+
+/*------------[ZOEKBALK]------------*/
+
+#zoekBalk{
+    min-height: 62px;
+    transition: 0.3s;
+}
+
+#zoekBalkWrapper{
+    display: flex;
+    margin-bottom: 1em;
+    background-color: white;
+    padding: 1em;
+    transition: 0.3s;
+    margin-top: -4.8em;
+}
+
+#zoekBalk button{
+    font-size: 1.2em;
+    background-color: white;
+    color: #3b347b;
+    margin: 0 0.7em 0 0;
+}
+
+#zoekBalk input[type=text], select {
+    width: 100%;
+    height: 2em;
+    border-bottom: 1px solid #7d79a9;
+    transition: 0.3s;
+}
+
+#zoekBalk input[placeholder]:focus {
+    color: #a49cec;
+    font-weight: 100;
+    font-size: 1.5em;
+    color: #a49cec;
+    outline-width: 0;
+    border-bottom: 2px solid #a49cec;
+}
+
+.sticky{
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    transition: all 0.3s;
+    animation-name: navigatie;
+    animation-duration: 0.8s;
+    width: 100%;
+    padding: 0;
+}
+
+
+/*------------[NAV]------------*/
+
+nav{
+    width: 20vw;
+    margin-bottom: 2em;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #3b347b;
+    text-align: right;
+    padding: 1em;
+    margin-left: 11vw;
+    margin-top: 1em;
+}
+
+#navRapper{
+    display: flex;
+    width: 78.5vw;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#h1Nav{
+    font-size:3em; 
+    position:absolute; 
+    left:44.5%; 
+    background-color:#9088b9; 
+    top:0; 
+    margin-top:-9px; 
+    height: 70px; 
+    border: 2px solid #9088b9;
+    border-radius: 15em;
+    padding: 0 0.5em 0 0.5em;
+}
+
+#h1Nav a{
+    color: white;
+    text-decoration: none;
+}
+
+#h1Nav a:hover{
+    transition: 0.1s;
+    color: #3b347b;
+}
+
+#accountNaam{
+    display: flex;
+    color: white;
+    font-size: 0.8em;
+    margin-right: 1em;
+    align-items: center;
+    font-size: 0;
+}
+
+#melding{
+    position: fixed;
+    color: white;
+    padding: 1em;
+    z-index: 999999;
+    bottom: 0;
+    right: 0;
+}
+
+#topScroll{
+    margin-top: 40px;
+    margin-left: 5px;
+}
+
+
+#topScroll a{
+    color: #c1c1c1;
+    font-size: 1.8em;
+    transition: 0.3s;
+}
+
+#topScroll a:hover{
+    color: #3b347b;
+}
+
+@keyframes navigatie {
+    0% {opacity: 0;
+    margin-top: -150px;
+    }
+    30% {opacity: 0;
+    margin-top: -150px;
+    }
+    100% {opacity: 1;
+    margin-top: 0;
+    }
+}
+
+/*------------[ASIDE]------------*/   
+#aside{
+    height: 100vh;
+    width: 15vw;
+    min-width: 250px;
+    align-self: flex-start;
+    padding: 0 2em 2em 2em;
+    transition: 0.5s;
+    margin-top: 0.5em;
+    background-color: #fbfbfb;
+}
+
+#asideWrapper{
+    transition: 0.5s;
+}
+
+.togelAside{
+    font-size: 1.5em;
+    color: white;
+    margin: 0.8em;
+    top:0;
+    left:0;
+    position: absolute;
+}
+
+.togelAside:hover{
+    cursor: pointer;
+}
+
+#aside ul li{
+    text-decoration: none;
+    list-style: none;
+    margin: 1em 0 0 1em;
+    transition: 0.3s;
+}
+
+#aside ul li:hover{
+    cursor: pointer;
+    color: #3b347b;
+}
+
+
+#aside ul ul{
+    margin: 0 0 0 2em;
+}
+
+#aside ul ul li{
+    line-height: 25px;
+    margin: 0 0 0 2em;
+}
+
+
+#aside ul li i{
+    font-size: 1.4em;
+    margin: 0 0.5em 0 0;
+}
+
+#aside ul li img{
+    width: 25px;
+    margin: 0 0.5em 0 0;
+}
+
+#aside ul li a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.active{
+    color: #3b347b;
+    font-weight: 700;
+}
+
+.waardenAside{
+    font-size: 0;
+    display: none;
+}
+
+.verwijderAside{
+    margin-left: -550px;
+    transition: 0.5s;
+}
+
+.fixedAside{
+    position: fixed;
+    left: 10;
+    top: 0;
+    z-index: 55555;
+    transition: 0.5s;
+}
+
+.fixedTogelAside{
+    position: fixed;
+    background-color: #252233;
+    padding: 0.5em;
+    margin: 0;
+    animation: navigatie;
+    animation-duration: 0.8s;
+}
+
+#afmelden button{
+    background-color: #fbfbfb;
+}
+
+/*----------- [MASONRY]------------*/
+
+.content{
+    width: 60vw;
+}
+
+#masonry{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.item:before, .item:after { content: " "; display: table; }
+.item:after { clear: both; }
+
+.item{
+    width: calc(25% - 1em);
+    margin: 0.5em;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item h3{
+    font-size: 1.1em;
+    padding: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    color: #252233;
+}
+
+.item img{
+    width: 100%;
+}
+
+.item p{
+    text-align: left;
+    margin: 0 1em 1em 1em;
+    font-size: 0.8em;
+}
+
+.source p{
+    font-size: 0.7em;
+    padding: 0.5em;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    z-index: 999999999999;
+    background-color: #252233;
+    width: auto;
+    float: right;
+}
+
+.source p img{
+    width: 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0.5em;
+}
+
+.item a{
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    margin: 1em;
+    color: white;
+    float: left;
+    padding: 0 0 0 1.2em;
+    transition: 0.3s;
+    background-color: #252233;
+    padding: 0.4em;
+}
+
+.item i{
+    margin: 0 0.3em 0 0;
+}
+
+.item a:hover{
+    font-weight: 800;
+    background-color: #7674A3;
+    transition: 0.3s;
+}
+
+.item span{
+    font-size: 0.7em;
+    padding: 2em 0 1em 0.8em;
+}
+
+.toevoegen{
+    width: 17px;
+    height: 17px;
+    clear: both;
+    z-index: 99999;
+    transition: 0.1s;
+    display: block;
+    margin: 0.5em;
+    content: url("../img/heart.png");
+    right: 0;
+    position: absolute;
+}
+
+.toevoegen:hover{
+    cursor: pointer;
+}
+
+.toegevoegd{
+    content: url("../img/heartfilled.png");
+}
+
+#result{
+    z-index: 999;
+    color: white;
+    padding: 1em;
+    font-size: 0.9em;
+    background-color: #3b347b;
+    transition: 0.3s;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    display: none;
+}
+
+
+/*---------------------MEDIA-SCREEN----------------*/
+
+@media only screen and (max-width: 1270px) {
+    #cards{
+        width: 70vw;
+    }
+    
+    .item{
+        width: calc(33.33% - 1em);
+    }
+    
+    .sticky{
+        width: 71%;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    header{
+        min-height: 17em;
+    }
+    
+    header h1 {
+    font-size: 9em;
+    }
+    
+    #aanmelden form{
+    width: 80vw;
+    }
+    
+    #cards{
+        width: 65vw;
+    }
+    
+    .item{
+        width: calc(50% - 1em);
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    header{
+        height: 12em;
+        min-height: 12em;
+    }
+    
+    header h1 {
+    font-size: 7em;
+    }
+    
+    #aanmelden form{
+    width: 80vw;
+    }
+    
+    #aside{
+        margin-left: -250px;
+    }
+    
+    #cards{
+        width: 98vw;
+        margin-left: 0;
+    }
+    
+    .item{
+        width: calc(99% - 1em);
+        margin-bottom: 1em;
+    }
+    
+    .item article{
+        margin: 0 0.5em 0.5em 0.5em;
+    }
+        
+    .sticky{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .item{
+        width: calc(100% - 0.5em);
+        margin-left: 0;
+    }
+    
+    .sticky{
+        width: 100%;
+    }
+}
+
