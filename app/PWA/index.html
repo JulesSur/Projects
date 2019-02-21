@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#3c3b52" />
+	<meta name="Description" content="Ontdek alle internationale artikels verzameld in 1 applicatie.">
+	<title>MyFeeds</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="manifest" href="manifest.json">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:900i" rel="stylesheet">
+	<link rel="stylesheet" href="css/FontAwsome/css/fontawesome-all.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+	<link rel="icon" type="image/png" href="img/logo.ico" sizes="16x16">
+</head>
+
+<body>
+	<main>
+		<div id="zoeker">
+			<i class='fas fa-search'></i>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek in artikels" title="Zoek een artikel">
+		</div>
+		<nav>
+			<ul>
+				<li class="active"><a href="#">Hoofdpunten</a></li>
+				<li><a href="#">Nationaal</a></li>
+				<li><a href="#">Wereld</a></li>
+				<li><a href="#">Wetenschap</a></li>
+				<li><a href="#">Entertainment</a></li>
+				<li><a href="#">Financiën</a></li>
+				<li><a href="#">Technologie</a></li>
+			</ul>
+		</nav>
+
+
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<header>
+						<h1>Feeds</h1>
+					</header>
+					<div id="page1"></div>
+				</div>
+				<div class="swiper-slide">
+					<header id="DeStandaard">
+						<img src="img/bannerLogos/DeStandaardbanner.png">
+					</header>
+					<div id="page2"></div>
+				</div>
+				<div class="swiper-slide">
+					<header id="DeTijd">
+						<img src="img/bannerLogos/DeTijdbanner.png">
+					</header>
+					<div id="page3"></div>
+				</div>
+				<div class="swiper-slide">
+					<header id="HLN">
+						<img src="img/bannerLogos/HLNbanner.png">
+					</header>
+					<div id="page4"></div>
+				</div>
+				<div class="swiper-slide">
+					<header id="NYT">
+						<img src="img/bannerLogos/NYTbanner.png">
+					</header>
+					<div id="page5"></div>
+				</div>
+				<div class="swiper-slide">
+					<header id="BBC">
+						<img src="img/bannerLogos/BBCbanner.png">
+					</header>
+					<div id="page6"></div>
+				</div>
+				<div class="swiper-slide">
+					<header id="Pajot">
+						<img src="img/bannerLogos/Pajotbanner.png">
+					</header>
+					<div id="page7"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="jquery.js"></script>
+	<script src="app.js"></script>
+	<script src="StickyNav.js"></script>
+	<script src="swiper.min.js"></script>
+	<script src="zoeker.js"></script>
+	<script>
+		var swiper = new Swiper('.swiper-container');
+	</script>
+</body>
+
+</html>

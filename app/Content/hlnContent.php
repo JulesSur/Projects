@@ -1,0 +1,55 @@
+<?php
+header('Access-Control-Allow-Origin: *'); //Cross domain ajaxs calls
+header('Access-Control-Allow-Headers: Origin, Content-Type, Authorization, X-Auth-Token');
+header('Access-Control-Allow-Methods: GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS');
+
+    include '../../php/dbLogin.php';
+
+    $limit = $_GET['limit'];
+    $offset= $_GET['offset'];
+
+    $sql= "SELECT * FROM Artikels WHERE source like 'HLN%' ORDER BY ammountID DESC LIMIT {$limit} OFFSET {$offset}";
+   
+
+    $data = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($data)>0){
+            while ($row = mysqli_fetch_array($data)){
+                        echo '<a href="'. $row[link] .'" target="artikel"><div class="item">';
+                          
+                            echo '<img src="' . $row['afbeelding'] . '"/>';
+                            
+                            echo '<div class="source" id="sourceHLN">';
+                                    if (strpos($row[link], 'www.hln.be/sport') !== false) {
+                                        echo '<img src="img/feedsLogos/HLNLogo.png"><p>Sport</p>';
+                                    }
+                                    elseif(strpos($row[link], 'www.hln.be/nieuws/buitenland') !== false){
+                                        echo '<img src="img/feedsLogos/HLNLogo.png"><p>Buitenenland</p>';
+                                    }                    
+                                    elseif(strpos($row[link], 'www.hln.be/nieuws/binnenland') !== false){
+                                    echo '<img src="img/feedsLogos/HLNLogo.png"><p>Binnenland</p>';
+                                    }
+                                    elseif(strpos($row[link], 'www.hln.be/reizen') !== false){
+                                    echo '<img src="img/feedsLogos/HLNLogo.png"><p>Reizen</p>';
+                                    }
+                                    elseif(strpos($row[link], 'www.hln.be/ihln') !== false){
+                                    echo '<img src="img/feedsLogos/HLNLogo.png"><p>iHLN</p>';
+                                    }
+                                    elseif($row[source] == 'HLN.be, Nieuws, sport en showbizz, 24/24, 7/7, meer dan 350 nieuwsupdates per dag'){
+                                    echo '<img src="img/feedsLogos/HLNLogo.png"><p>Video</p>';
+                                    }
+                                    else{
+                                        echo '<p>' . $row[source] . '</p>';
+                                    }
+                            echo '</div>';
+                            echo '<article><h2>' . $row['title'] . '</h2>';
+                            echo '<p>' . $row['description'] . '</p></artikel>';
+                            echo '<div class="articleFooter"><span>' . substr($row[pubDate], 4,-13) . '</span></div>';
+                            //echo '<span class="toevoegen">' . $row[ammountID] . '</span>';
+                        
+                       
+                        echo '</div></a>';
+                    }
+    }
+?>
+
+
